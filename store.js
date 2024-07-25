@@ -21,3 +21,27 @@ function reducer(state = initialState, action) {
         return state;
     }
   }
+
+  // Create the store
+function createStore(reducer) {
+    let state;
+    let listeners = [];
+  
+    // Get the current state
+    function getState() {
+      return state;
+    }
+
+    // Dispatch an action
+  function dispatch(action) {
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  }
+
+  // Subscribe to state changes
+  function subscribe(listener) {
+    listeners.push(listener);
+    return () => {
+      listeners = listeners.filter(l => l !== listener);
+    };
+  }
