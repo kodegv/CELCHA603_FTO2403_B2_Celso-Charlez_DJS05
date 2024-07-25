@@ -6,11 +6,11 @@
 // Update the counter display
 function updateCounter() {
     const countElement = document.getElementById('count');
-    countElement.textContent = store.getState().count;
+    countElement.textContent = window.store.getState().count;
   }
 
 // Subscribe to store updates
-store.subscribe(updateCounter);
+window.store.subscribe(updateCounter);
 
 // Scenario 1: Initial State Verification
 console.log('Initial state:', window.store.getState()); // Should log: { count: 0 }
