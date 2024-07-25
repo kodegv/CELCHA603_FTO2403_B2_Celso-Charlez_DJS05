@@ -5,6 +5,19 @@ import { store, ADD, SUBTRACT, RESET } from './store';
 // Scenario 1: Initial State Verification
 console.log('Initial state:', store.getState()); // Should log: { count: 0 }
 
+// Add event listeners to buttons
+document.getElementById('addBtn').addEventListener('click', () => {
+  store.dispatch({ type: ADD });
+});
+
+document.getElementById('subtractBtn').addEventListener('click', () => {
+  store.dispatch({ type: SUBTRACT });
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  store.dispatch({ type: RESET });
+});
+
 // Scenario 2: Incrementing the Counter
 store.dispatch({ type: ADD });
 store.dispatch({ type: ADD });
