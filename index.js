@@ -2,6 +2,9 @@
 
 import { store, ADD, SUBTRACT, RESET } from './store';
 
+// Subscribe to store updates
+store.subscribe(updateCounter);
+
 // Scenario 1: Initial State Verification
 console.log('Initial state:', store.getState()); // Should log: { count: 0 }
 
