@@ -2,6 +2,12 @@
 
 import { store, ADD, SUBTRACT, RESET } from './store';
 
+// Update the counter display
+function updateCounter() {
+    const countElement = document.getElementById('count');
+    countElement.textContent = store.getState().count;
+  }
+
 // Subscribe to store updates
 store.subscribe(updateCounter);
 
