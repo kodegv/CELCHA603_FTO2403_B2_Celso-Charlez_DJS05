@@ -62,3 +62,9 @@ store.subscribe(() => {
 
 // Export the store and action types
 export { store, ADD, SUBTRACT, RESET };
+
+// Export the store and action types (Help from W3 Schools to ensure CommonJS syntax)
+window.store = store;
+window.ADD = ADD;
+window.SUBTRACT = SUBTRACT;
+window.RESET = RESET;
